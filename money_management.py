@@ -1,7 +1,27 @@
 # Introduction to the casino
+import pandas
+
 print("Welcome to our Totally Not Rigged Casino!")
 print("My name is Nathan and I will be your host this evening")
 print("")
+
+'''
+Objectives:
+- Create a dictionary with name and password as keys for the value of money
+  that can track the player's money as they play 
+    + For each game the player play just assign the money value using the keys to a new variable,
+      manipulate the amount as they play and then add the value back to the same keys
+    
+- Create a profit loss analysis for each player, each games (+ for profit and - for loss)
+    + When the player switch game or cash-out record the amount of money win or lose by the player per game
+    + Record the amount total win lose by the player from deposit to cash-out
+    + Suggestion to use data frame from pandas to record these value 
+      with the column names are the 3 games and the row names are the players
+'''
+
+import pip
+
+
 
 balance_sheet = {}
 
