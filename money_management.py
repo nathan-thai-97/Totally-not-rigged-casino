@@ -1,7 +1,6 @@
 # Introduction to the casino
 print("Welcome to our Totally Not Rigged Casino!")
 print("My name is Nathan and I will be your host this evening")
-print("Currently we are able to offer 3 games: Slot Machine, BlackJack and Roulette")
 print("")
 
 
@@ -39,9 +38,16 @@ print("")
 # I will attempt to reproduce the above code as a class object "Player" with attributes "name" and "money"
 
 balance_sheet = {}
+
+
 class Player:
     def __init__(self):
         self.name = input("What is your name?: ")
+        print("")
+        print(f"Hello, {self.name}! ")
+
+        print("")
+        print("Since our casino is quite new, we can only accept deposit between $100 to $2000.")
         while True:
             try:
                 self.money = int(input("Enter the amount you wish to play today: "))
@@ -65,4 +71,8 @@ class Player:
 Valuable_customer = Player()
 Valuable_customer.balance_sheet_add()
 Valuable_customer.money_amount_checking()
-game = input("Your deposit is processed. Please choose the games that you would like to start: ")
+print("")
+print("Your deposit is processed.")
+print("Currently we are able to offer 3 games: Slot Machine, BlackJack and Roulette.")
+print("")
+game = input("Please choose the games that you would like to start: ")
