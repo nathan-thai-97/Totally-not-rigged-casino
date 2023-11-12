@@ -8,8 +8,8 @@ print("Welcome to our Totally Not Rigged Casino!")
 print("My name is Nathan and I will be your host this evening")
 print("")
 
+# Objectives
 '''
-Objectives:
 - Create a LOCAL dictionary within class Player with name and password as keys for the value of money
   that can track the player's money as they play (Done)
     + For each game the player play just assign the money value using the keys to a new variable,
