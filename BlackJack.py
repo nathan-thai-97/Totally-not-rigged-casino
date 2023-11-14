@@ -1,4 +1,5 @@
-import random as rd
+from CardManagement import CardDealing
+CD = CardDealing
 
 # BlackJack Rules and Play:
 """
@@ -36,9 +37,6 @@ BlackJack rules (Just the dealer and one player):
 """
 
 
-# Create a card decks
-
-
 class BlackJack:
     def __init__(self):
         while True:
@@ -51,7 +49,76 @@ class BlackJack:
 
             except ValueError:
                 print("The bet doesn't meet our requirement, please input another amount:  ")
+        self.blackjack_cards = CD()
+        self.choice = ''
+
+        # Assign blackjack values for the cards
+        self.blackjack_cards_value = {}
+        for i in self.blackjack_cards.num_card_as_string:
+            self.blackjack_cards_value[i] = int(i)
+        for t in ['J', 'K', 'Q']:
+            self.blackjack_cards_value[t] = 10
+        self.blackjack_cards_value['A'] = 11
+
+        # Setting up initial dealing
+        self.player_card_1 = self.blackjack_cards.new_card()
+        print(f'Here is your first card: {self.player_card_1}')
+        self.player_card_1_value = self.blackjack_cards.dealt_value
+
+        self.dealer_card_1 = self.blackjack_cards.new_card()
+        print(f'Here is the dealer first card: {self.dealer_card_1}')
+        self.dealer_card_1_value = self.blackjack_cards.dealt_value
+
+        self.player_card_2 = self.blackjack_cards.new_card()
+        print(f'Here is your second card: {self.player_card_2}')
+        self.player_card_2_value = self.blackjack_cards.dealt_value
+
+        self.dealer_card_2 = self.blackjack_cards.new_card()
+        self.dealer_card_2_value = self.blackjack_cards.dealt_value
+
+        self.player_sum = self.card_sum(self.player_card_1_value, self.player_card_2_value)
+        self.dealer_sum = self.card_sum(self.dealer_card_1_value, self.dealer_card_2_value)
+    def card_sum(self, card_1, card_2):
+        sum_card = self.blackjack_cards_value[card_1] + self.blackjack_cards_value[card_2]
+        return sum_card
+
+    def blackjack_showdown(self):
+        if self.player_sum == 21:
+            print('You have a BlackJack!')
+            if self.dealer_sum == 21:
+                print('The Dealer also have a BlackJack! Your bet is returned')
+            else:
+                print('You just win 1.5 times your bet! Congratulation')
+        elif self.dealer_sum == 21:
+            print('The Dealer have a BlackJack!')
+            print('You lost your bet! Better luck next time!')
+        else:
+            while self.choice not in ['hit', 'stand', 'double down', 'split']:
+                if self.player_card_1_value == self.player_card_2_value:
+                    self.choice = input('Would you like to hit, stand, double down or split: ')
+                else:
+                    self.choice = input('Would you like to hit, stand, or double down: ')
+
+    def stand(self):
+        if self.player_sum > 21:
+            print("You are busted!")
+            print("You lost your bet! Better luck next time!")
+        else:
+            while self.dealer_sum <= 17:
+                self.dealer_card_draw = se
+    def player_choice(self):
+        if self.choice is 'stand':
+            player_sum = self.card_sum(self.player_card_1_value, self.player_card_2_value)
+        elif self.choice is 'double down':
+
+
+
+
+
 
 
 blackjack_game = BlackJack()
-
+blackjack_game.blackjack_showdown()
+blackjack_game.player_choice()
+# print(blackjack_game.dealer_card_2)
+# print(blackjack_game.blackjack_cards_value)

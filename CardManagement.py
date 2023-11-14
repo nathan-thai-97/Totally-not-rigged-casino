@@ -40,14 +40,12 @@ class CardDealing(CardDecks):
             self.card_dealt_list.append(self.card_dealt)
             return self.card_dealt
 
-
     def new_deck(self):
         self.card_dealt_list = []
 
 
-Player_cards = CardDealing()
-Player_card_1 = Player_cards.new_card()
-Player_card_1_value = Player_cards.dealt_value
-
-print(Player_card_1_value)
-
+# Player_cards = CardDealing()
+# Player_card_1 = Player_cards.new_card()
+# Player_card_1_value = Player_cards.dealt_value
+#
+# print(Player_card_1_value)
